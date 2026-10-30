@@ -1,0 +1,7 @@
+{
+  "name": "NutriWise",
+  "version": "1.0.0",
+  "description": "NutriWise: product showcase with admin panel and live sync",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" }
+}

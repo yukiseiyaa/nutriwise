@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NutriWise — Admin Dashboard</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M6 26C6 13 14 5 28 4c0 14-7 22-20 22z' fill='%234e7843'/><path d='M6 26C11 19 16 14 24 8' stroke='%23183b2b' stroke-width='2.2' stroke-linecap='round'/></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ========================================================
+       SPLIT LOGIN SCREEN (MATCHES FIGMA MAKE PROTOTYPE)
+       ======================================================== -->
+  <main id="login-screen" class="login-split">
+    <!-- Left Green Banner -->
+    <div class="login-left">
+      <div class="login-decor-circle circle-1"></div>
+      <div class="login-decor-circle circle-2"></div>
+      <div class="login-decor-circle circle-3"></div>
+
+      <div class="login-brand">
+        <svg viewBox="0 0 32 32" fill="none">
+          <path d="M6 26C6 13 14 5 28 4c0 14-7 22-20 22z" fill="#9ECB8A"/>
+          <path d="M6 26C11 19 16 14 24 8" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"/>
+        </svg>
+        <span>NutriWise</span>
+      </div>
+
+      <div class="login-left-body">
+        <span class="eyebrow-portal">KITCHEN PORTAL</span>
+        <h1 class="login-headline">
+          Good food,<br>
+          <em>managed</em> wisely.
+        </h1>
+        <p class="login-subtext">
+          Manage your product catalog, production process, stock, and buyer inquiries in one place.
+        </p>
+      </div>
+
+      <div class="login-left-footer">
+        NutriWise Management System · 2026
+      </div>
+    </div>
+
+    <!-- Right Login Card Form -->
+    <div class="login-right">
+      <div class="login-card-floating">
+        <span class="eyebrow-admin">ADMINISTRATOR ACCESS</span>
+        <h2>Welcome back</h2>
+        <p>Enter the kitchen manager password to continue.</p>
+
+        <form id="login-form">
+          <div style="margin-bottom: 20px;">
+            <label for="pw" class="field-label">Password</label>
+            <input id="pw" class="password-input" type="password" placeholder="Enter your password" required autocomplete="current-password">
+          </div>
+          <button type="submit" class="btn-sign-in">Sign in to dashboard</button>
+          <div id="login-msg" class="msg"></div>
+          <p class="demo-hint">Demo password: <code>admin123</code></p>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- ========================================================
+       AUTHENTICATED ADMIN DASHBOARD (MATCHES FIGMA MAKE PROTOTYPE)
+       ======================================================== -->
+  <div id="app" hidden style="display: none;">
+    <!-- Top Navigation Header -->
+    <header class="admin-nav">
+      <div class="wrap admin-nav-inner">
+        <div class="admin-logo-group">
+          <svg viewBox="0 0 32 32" fill="none">
+            <path d="M6 26C6 13 14 5 28 4c0 14-7 22-20 22z" fill="#4E7843"/>
+            <path d="M6 26C11 19 16 14 24 8" stroke="#183B2B" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+          <div class="admin-logo-titles">
+            <span class="admin-logo-name">NutriWise</span>
+            <span class="admin-logo-sub">ADMIN DASHBOARD</span>
+          </div>
+        </div>
+
+        <div class="admin-nav-buttons">
+          <a href="/" class="btn-pill outline">View website</a>
+          <button id="logout" type="button" class="btn-pill dark">Log out</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Management Overview Section -->
+    <main class="wrap management-overview">
+      <div class="overview-header-row">
+        <div>
+          <span class="eyebrow-overview">MANAGEMENT OVERVIEW</span>
+          <h1 class="greeting-title" id="admin-greeting">Good morning, Manager.</h1>
+        </div>
+        <p class="sync-notice">
+          Changes save automatically and sync to the public website when refreshed.
+        </p>
+      </div>
+
+      <!-- Overview Stat Cards (Figma 3-Card Grid + Orders) -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-card-label">Products</span>
+          <div class="stat-card-val" id="stat-products-count">8</div>
+          <span class="stat-card-sub">in catalog</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card-label">In stock</span>
+          <div class="stat-card-val" id="stat-instock-count">7</div>
+          <span class="stat-card-sub">available now</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card-label">New inquiries</span>
+          <div class="stat-card-val" id="stat-inquiries-count">0</div>
+          <span class="stat-card-sub">need attention</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card-label">Pending orders</span>
+          <div class="stat-card-val" id="stat-orders-count">0</div>
+          <span class="stat-card-sub">to fulfill</span>
+        </div>
+      </div>
+
+      <!-- Pill Tabs Row (Figma: Products, Process, Inquiries + Orders) -->
+      <div class="pills-tabs-row" role="tablist">
+        <button class="tab-pill active" data-tab="products" type="button" role="tab">Products</button>
+        <button class="tab-pill" data-tab="process" type="button" role="tab">Process</button>
+        <button class="tab-pill" data-tab="inquiries" type="button" role="tab">Inquiries</button>
+        <button class="tab-pill" data-tab="orders" type="button" role="tab">Orders</button>
+      </div>
+
+      <!-- Main White Panel Card -->
+      <div class="panel-white">
+        <!-- View 1: Product Manager -->
+        <section id="view-products" class="view active">
+          <div class="panel-header">
+            <div>
+              <h2>Product manager</h2>
+              <p>Edit fields directly, then view the live website.</p>
+            </div>
+            <button id="add-product" type="button" class="btn-pill green">+ Add product</button>
+          </div>
+          <div id="product-list" class="products-list-wrap"></div>
+        </section>
+
+        <!-- View 2: Process Manager ("How It's Made") -->
+        <section id="view-process" class="view">
+          <div class="panel-header">
+            <div>
+              <h2>Process manager</h2>
+              <p>Keep customers updated on how each batch is made.</p>
+            </div>
+            <button id="add-step" type="button" class="btn-pill green">+ Add step</button>
+          </div>
+          <div id="step-list" class="process-list"></div>
+        </section>
+
+        <!-- View 3: Inquiries Tracker -->
+        <section id="view-inquiries" class="view">
+          <div class="panel-header">
+            <div>
+              <h2>Inquiry tracker</h2>
+              <p>Move every customer request from new lead to confirmed order.</p>
+            </div>
+          </div>
+          <div id="inquiry-list" class="items-list-wrap"></div>
+        </section>
+
+        <!-- View 4: Orders Fulfillment Manager -->
+        <section id="view-orders" class="view">
+          <div class="panel-header">
+            <div>
+              <h2>Order fulfillment</h2>
+              <p>Track, update status, and manage client orders placed on the store.</p>
+            </div>
+          </div>
+          <div id="order-list" class="items-list-wrap"></div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- Product Modal Dialog -->
+  <dialog id="product-dialog" class="admin-dialog">
+    <div class="dialog-header">
+      <h3 id="pd-title">Product Details</h3>
+      <button type="button" class="close-btn" data-close aria-label="Close dialog">✕</button>
+    </div>
+    <form id="product-form">
+      <div class="form-grid">
+        <div class="form-group full">
+          <label for="pf-name">Product Name *</label>
+          <input id="pf-name" placeholder="e.g. Power Bites" required>
+        </div>
+        <div class="form-group full">
+          <label for="pf-desc">Description</label>
+          <textarea id="pf-desc" placeholder="A short description of flavor and benefits..."></textarea>
+        </div>
+        <div class="form-group">
+          <label for="pf-price">Price (₱) *</label>
+          <input id="pf-price" type="number" min="0" step="1" placeholder="85" required>
+        </div>
+        <div class="form-group">
+          <label for="pf-unit">Packaging Unit</label>
+          <input id="pf-unit" placeholder="e.g. 6-piece pouch, 200g pack">
+        </div>
+        <div class="form-group full">
+          <label for="pf-ing">Ingredients &amp; Sourcing Details</label>
+          <textarea id="pf-ing" placeholder="List key ingredients and wholesome sourcing notes..."></textarea>
+        </div>
+        <div class="form-group full">
+          <label for="pf-badges">Badges (comma-separated)</label>
+          <input id="pf-badges" placeholder="High Protein, No Refined Sugar">
+        </div>
+        <div class="form-group">
+          <label for="pf-emoji">Icon Emoji</label>
+          <input id="pf-emoji" placeholder="🍫" maxlength="8">
+        </div>
+        <div class="form-group">
+          <label for="pf-image">Image URL</label>
+          <input id="pf-image" placeholder="/hero-bar.jpg">
+        </div>
+      </div>
+      <div class="dialog-footer">
+        <button type="button" class="btn-pill outline" data-close>Cancel</button>
+        <button type="submit" class="btn-pill dark">Save product</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Step Modal Dialog -->
+  <dialog id="step-dialog" class="admin-dialog">
+    <div class="dialog-header">
+      <h3 id="sd-title">Process Step</h3>
+      <button type="button" class="close-btn" data-close aria-label="Close dialog">✕</button>
+    </div>
+    <form id="step-form">
+      <div class="form-grid">
+        <div class="form-group full">
+          <label for="sf-title">Step Title *</label>
+          <input id="sf-title" placeholder="e.g. Sourcing" required>
+        </div>
+        <div class="form-group full">
+          <label for="sf-desc">Step Description</label>
+          <textarea id="sf-desc" placeholder="Explain this part of the small-batch production process..."></textarea>
+        </div>
+      </div>
+      <div class="dialog-footer">
+        <button type="button" class="btn-pill outline" data-close>Cancel</button>
+        <button type="submit" class="btn-pill dark">Save step</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Floating Toast Notification -->
+  <div id="toast" class="toast"></div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

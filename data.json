@@ -1,0 +1,257 @@
+{
+  "products": [
+    {
+      "id": "p1",
+      "name": "Power Bites",
+      "description": "Soft-baked cacao and peanut bites made for sustained energy between classes.",
+      "price": 85,
+      "unit": "6-piece pouch",
+      "ingredients": "Rolled oats, roasted peanuts, dates, cacao powder, chia seeds, and sea salt.",
+      "process": "The ingredients are blended, hand-shaped into bites, then chilled and packed fresh.",
+      "nutrition": {
+        "calories": 210,
+        "serving": "3 bites (45g)",
+        "protein": "8g",
+        "fiber": "5g",
+        "sugars": "9g"
+      },
+      "badges": [
+        "HIGH PROTEIN",
+        "NO REFINED SUGAR"
+      ],
+      "emoji": "🍫",
+      "image": "/hero-bar.jpg",
+      "inStock": true
+    },
+    {
+      "id": "p2",
+      "name": "Moringa Oat Crisps",
+      "description": "Toasty whole-grain crisps enriched with locally sourced moringa leaves.",
+      "price": 120,
+      "unit": "200g pack",
+      "ingredients": "Whole grain rolled oats, fresh ground moringa (malunggay) leaf powder, white sesame seeds, unrefined coconut oil, and raw cane syrup.",
+      "process": "Flour and fresh moringa purée are folded, rolled thin, and slow-baked to a golden crunch.",
+      "nutrition": {
+        "calories": 180,
+        "serving": "50g pack",
+        "protein": "6g",
+        "fiber": "7g",
+        "sugars": "3g"
+      },
+      "badges": [
+        "IRON FORTIFIED",
+        "HIGH FIBER"
+      ],
+      "emoji": "🥣",
+      "image": "/moringa-crisps.jpg",
+      "inStock": true
+    },
+    {
+      "id": "p3",
+      "name": "Daily Fuel Bar",
+      "description": "A chewy banana, seed, and oat bar built for busy mornings and active days.",
+      "price": 55,
+      "unit": "single bar",
+      "ingredients": "Sun-ripened bananas, rolled oats, sunflower seeds, pumpkin pepitas, shelled pistachios, and golden flaxseed meal.",
+      "process": "Naturally dried fruits and cold-pressed seeds are pressed into bars and individually foil-sealed.",
+      "nutrition": {
+        "calories": 220,
+        "serving": "1 bar (60g)",
+        "protein": "9g",
+        "fiber": "6g",
+        "sugars": "8g"
+      },
+      "badges": [
+        "PLANT POWERED",
+        "ENERGY BOOST"
+      ],
+      "emoji": "🍌",
+      "image": "/fuel-bar.jpg",
+      "inStock": false
+    },
+    {
+      "id": "p4",
+      "name": "Harvest Trail Mix",
+      "description": "A satisfying blend of roasted nuts, pumpkin seeds, cacao nibs, and dried fruit.",
+      "price": 135,
+      "unit": "180g pouch",
+      "ingredients": "Dry-roasted whole almonds, California walnuts, wild mountain dried cranberries, raw pumpkin seeds, and unsweetened coconut shavings.",
+      "process": "Raw nuts and seeds are dry-roasted at low heat, tossed with single-origin nibs, and sealed.",
+      "nutrition": {
+        "calories": 240,
+        "serving": "40g handful",
+        "protein": "7g",
+        "fiber": "4g",
+        "sugars": "6g"
+      },
+      "badges": [
+        "HEALTHY FATS",
+        "SOURCE OF FIBER"
+      ],
+      "emoji": "🥜",
+      "image": "/trail-mix.jpg",
+      "inStock": true
+    },
+    {
+      "id": "p5",
+      "name": "Coconut Oat Cookies",
+      "description": "Crisp, lightly sweet cookies baked with rolled oats and real coconut flakes.",
+      "price": 110,
+      "unit": "8-piece box",
+      "ingredients": "Stone-ground oat flour, jumbo rolled oats, organic coconut oil, fair-trade 70% dark chocolate chips, and coconut sugar.",
+      "process": "Slow-baked in small batches to preserve natural aromatics and texture.",
+      "nutrition": {
+        "calories": 190,
+        "serving": "2 cookies (40g)",
+        "protein": "5g",
+        "fiber": "4g",
+        "sugars": "7g"
+      },
+      "badges": [
+        "WHOLE GRAIN",
+        "DAIRY FREE"
+      ],
+      "emoji": "🍪",
+      "image": "/coconut-cookies.jpg",
+      "inStock": true
+    },
+    {
+      "id": "p6",
+      "name": "Nut & Seed Crunch",
+      "description": "Slow-roasted almonds, cashews, and seeds seasoned with a touch of sea salt.",
+      "price": 145,
+      "unit": "150g jar",
+      "ingredients": "Crispy roasted pecans, black chia seeds, shelled sunflower kernels, sprouted pumpkin seeds, and hand-harvested pink sea salt.",
+      "process": "Artisan-clustered in small batches, gently salted, and packed into reusable jars.",
+      "nutrition": {
+        "calories": 230,
+        "serving": "35g cluster",
+        "protein": "10g",
+        "fiber": "5g",
+        "sugars": "2g"
+      },
+      "badges": [
+        "PROTEIN RICH",
+        "LOW SUGAR"
+      ],
+      "emoji": "🌰",
+      "image": "/nut-crunch.jpg",
+      "inStock": true
+    },
+    {
+      "id": "p7",
+      "name": "Banana Boost Bites",
+      "description": "Chewy banana and flaxseed energy bites rolled in roasted sesame seeds.",
+      "price": 95,
+      "unit": "6-piece pouch",
+      "ingredients": "Naturally dehydrated organic bananas, sprouted brown flaxseed, puffed brown rice, ground cashew butter, and toasted white sesame seeds.",
+      "process": "Cold-pressed without baking to retain raw enzymes, natural potassium, and minerals.",
+      "nutrition": {
+        "calories": 195,
+        "serving": "3 bites (45g)",
+        "protein": "6g",
+        "fiber": "6g",
+        "sugars": "10g"
+      },
+      "badges": [
+        "POTASSIUM",
+        "ENERGY BOOST"
+      ],
+      "emoji": "⚡",
+      "image": "/banana-bites.jpg",
+      "inStock": true
+    },
+    {
+      "id": "p8",
+      "name": "Cacao Bean Clusters",
+      "description": "Rich Philippine single-origin cacao nibs folded into crunchy crisped grains.",
+      "price": 125,
+      "unit": "160g pouch",
+      "ingredients": "Single-origin Davao cacao nibs, puffed royal quinoa, brown rice crisps, toasted whole hazelnuts, coconut blossom nectar, and sea salt crystals.",
+      "process": "Folded with molten single-origin dark cacao and quick-chilled for signature crunch.",
+      "nutrition": {
+        "calories": 215,
+        "serving": "40g cluster",
+        "protein": "8g",
+        "fiber": "5g",
+        "sugars": "5g"
+      },
+      "badges": [
+        "PLANT PROTEIN",
+        "IRON SOURCE"
+      ],
+      "emoji": "✨",
+      "image": "/cacao-clusters.jpg",
+      "inStock": true
+    }
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "title": "Sourcing",
+      "description": "We select honest, local ingredients from trusted growers."
+    },
+    {
+      "id": "s2",
+      "title": "Mixing",
+      "description": "Every batch is measured and mixed for balanced nutrition."
+    },
+    {
+      "id": "s3",
+      "title": "Baking",
+      "description": "Slow-baked in small batches to keep flavor and goodness in."
+    },
+    {
+      "id": "s4",
+      "title": "Packaging",
+      "description": "Sealed fresh and labeled by hand, ready for your shelves."
+    }
+  ],
+  "inquiries": [],
+  "orders": [
+    {
+      "id": "210f16fb",
+      "code": "NW-9177A5",
+      "name": "Test User",
+      "contact": "test@x.com",
+      "method": "Delivery",
+      "address": "123 Ayala Ave, Makati",
+      "date": "2026-10-30",
+      "notes": "no egg",
+      "items": [
+        {
+          "id": "p2",
+          "name": "Moringa Oat Crisps",
+          "unit": "200g pack",
+          "price": 120,
+          "qty": 1
+        }
+      ],
+      "total": 120,
+      "status": "Out for Delivery",
+      "createdAt": "2026-10-27T11:28:21.890Z"
+    },
+    {
+      "id": "8bbc729a",
+      "code": "NW-314B99",
+      "name": "Test User",
+      "contact": "maria@example.ph",
+      "method": "Pickup",
+      "address": "",
+      "date": "2026-10-28",
+      "notes": "",
+      "items": [
+        {
+          "id": "p1",
+          "name": "Power Bites",
+          "unit": "6-piece pouch",
+          "price": 85,
+          "qty": 1
+        }
+      ],
+      "total": 85,
+      "status": "Ready",
+      "createdAt": "2026-10-27T11:25:58.263Z"
+    }
+  ]
+}
